@@ -137,10 +137,24 @@ for(var value in me){
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
   //Code Here
+  
+  var album = {
+    song1: "3 min 43 sec",
+    song2: "4 min 22 sec",
+    song3: "4 min 32 sec",
+    song4: "3 min 11 sec",
+    song5: "2 min 57 sec"
+  };
+  
+  
 
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
+  
+  for(var song in album){
+    console.log(song);
+  }
 
 
 
@@ -153,10 +167,24 @@ for(var value in me){
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
+  
+var states = {
+    Utah: 100000,
+    Colorado: 3200,
+    California: 40000000,
+    NorthDakota: 10034,
+    Maryland: 4011111 
+  };  
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
+  
+  for(var pop in states){
+    if(states[pop] > 30000){
+      console.log(pop);
+    }
+  }
 
 
 
@@ -178,10 +206,27 @@ var user = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+  
+  for(var value in user){
+    if(user[value] === undefined || user[value] === null || user[value] === 0 || user[value] === "" || user[value] === false || user[value] === NaN){
+      delete user[value];
+    }
+  }
+  
+  console.log(user);
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
+  
+  user.name = "Blake Hagen";
+  user.email = "me@me.com";
+  user.pwHash = "An7&$24f@#D+s+24a!";
+  user.birthday = "5/1/1940";
+  user.username = "bh";
+  user.age = 75;
+  
+  console.log(user);
 
 
 
@@ -206,10 +251,15 @@ var user = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+  
+  user.name = "Tyler S. McGinnis";
+  user.email = "tyler.mcginnis@devmounta.in";
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
+  
+  user.sayName();
 
 
 
@@ -222,16 +272,30 @@ var user = {
 //Create an empty object called methodCollection.
 
   //Code Here
+  
+  var methodCollection = {};
+  
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+  
+  methodCollection.alertHello = function(){
+    alert("Hello!");
+  };
+  
+  methodCollection.logHello = function(){
+    console.log("Hello!");
+  }
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
+  
+  methodCollection.alertHello();
+  methodCollection.logHello();  
 
 
 
@@ -242,6 +306,12 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
+  
+  function makePerson(name, bday, ssn){
+    return {name: name, birthday: bday, ssn: ssn};
+  }
+  
+  makePerson("blake", "5/18/82", "111-11-1111");
 
 
 
@@ -252,6 +322,12 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
+  
+  function makeCard(address, phone, cardNumber, expiration){
+    return {Address: address, Phone: phone, CardNumber: cardNumber, Expiration: expiration};
+  }
+  
+  makeCard("111 maple st", "555-555-5599", "123456789", "10/2018");
   
   
   
@@ -266,4 +342,27 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
+function bindCard(personObj, ccObj){
+  var newObj = {};
+  for(var key in personObj) {
+    newObj[key] = personObj[key];
+  }
+  for(var val in ccObj) {
+    newObj[val] = ccObj[val];
+  }
+  return newObj;
+}
 
+
+bindCard(makePerson("blake", "5/18/82", "111-11-1111"), makeCard("111 maple st", "555-555-5599", "123456789", "10/2018"));
+
+//  returns--> 
+
+//  { name: 'blake',
+//   birthday: '5/18/82',
+//   ssn: '111-11-1111',
+//   Address: '111 maple st',
+//   Phone: '555-555-5599',
+//   CardNumber: '123456789',
+//   Expiration: '10/2018' }
+   
