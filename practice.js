@@ -4,6 +4,14 @@
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
+  
+  var me = {
+    name: "Blake",
+    age: 33
+  };
+  
+  alert(me.name);
+  console.log(me.name);
 
 
 
@@ -16,16 +24,34 @@
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
   //Code here
+  
+var favoriteThings = {
+  band: "band",
+  food: "pizza",
+  person: "emily",
+  book: "harry potter",
+  movie: "sports",
+  holiday: "Christmas"
+};
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
+  
+  favoriteThings.car = "montero";
+  favoriteThings.brand = "nike";
+  
+  console.log(favoriteThings);
 
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Code here
+  
+  
+  favoriteThings.food = "Lettuce";
+  favoriteThings.book = "50 Shades of Gray";
 
 
 
@@ -43,10 +69,23 @@ Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
   //Code here
+  
+var backPack = {};
+
+var item = "firstPocket";
+
+backPack[item] = "chapstick";
+
+backPack.color = "green";
+
+console.log(backPack);
+
 
 //After you do the above, alert your entire backPack object.
 
   //Code here
+  
+  alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -54,7 +93,7 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code here
 
-
+console.log(backPack);
 
 
 //NEXT PROBLEM
@@ -65,10 +104,27 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
-
+  
+var me = {
+    name: "Blake",
+    age: 33,
+    height: "5ft 7in",
+    gender: "male",
+    married: "yes",
+    eyeColor: "brown",
+    hairColor: "black"
+}
+  
+  console.log(me);
+    
+    
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
+  
+for(var value in me){
+  console.log(me[value]);
+}
 
 
 
