@@ -17,12 +17,23 @@ var ferrari = new Car("Ferrari", "FastZ", "2016", "Red");
 Car.prototype = {
 	forward: function(miles){
 		this.odometer = this.odometer + miles;
-	},
-	mechanic: function(){
-		if(this.working === false){
-			this.working = true;
-		}
 	}
 };
+
+var Mechanic = function(name){
+	this.name = name;
+}
+
+Mechanic.prototype = {
+	fix: function(car){
+		if(car.working === false){
+			car.working = true;
+		}
+	}	
+};
+
+var joe = new Mechanic("Joe");
+
+joe.fix(ferrari);
 
 
