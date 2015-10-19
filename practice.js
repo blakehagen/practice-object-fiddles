@@ -213,6 +213,12 @@ that each value is truthy. If it's not truthy, remove it from the object. */
     }
   }
   
+  for(var prop in user){
+    if(!(user[prop])){
+      delete user[prop];
+    }
+  }
+  
   console.log(user);
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
@@ -323,11 +329,11 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
   
-  function makeCard(address, phone, cardNumber, expiration){
-    return {Address: address, Phone: phone, CardNumber: cardNumber, Expiration: expiration};
+  function makeCard(cardNumber, expirationMonth, expirationYr){
+    return {CardNumber: cardNumber, ExpirationMonth: expirationMonth, expirationYear: expirationYr};
   }
   
-  makeCard("111 maple st", "555-555-5599", "123456789", "10/2018");
+   var blakeCC = makeCard("11111111", "10", "2018");
   
   
   
@@ -354,15 +360,15 @@ function bindCard(personObj, ccObj){
 }
 
 
-bindCard(makePerson("blake", "5/18/82", "111-11-1111"), makeCard("111 maple st", "555-555-5599", "123456789", "10/2018"));
+bindCard(blake, blakeCC);
 
 //  returns--> 
 
-//  { name: 'blake',
-//   birthday: '5/18/82',
-//   ssn: '111-11-1111',
-//   Address: '111 maple st',
-//   Phone: '555-555-5599',
-//   CardNumber: '123456789',
-//   Expiration: '10/2018' }
+// { CardNumber: "11111111"
+  // ExpirationMonth: "10"
+  // birthday: "5/18/82"
+  // expirationYear: "2018"
+  // name: "blake"
+  // ssn: "111-11-1111"
+  // }
    
