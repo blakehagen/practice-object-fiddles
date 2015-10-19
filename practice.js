@@ -311,7 +311,7 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
     return {name: name, birthday: bday, ssn: ssn};
   }
   
-  makePerson("blake", "5/18/82", "111-11-1111");
+  var blake = makePerson("blake", "5/18/82", "111-11-1111");
 
 
 
